@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('active');
     });
 
+
     // Close menu when clicking outside (optional, but good UX)
     document.addEventListener('click', (e) => {
         if (!mobileMenu.contains(e.target) && !mobileMenuIcon.contains(e.target) && mobileMenu.classList.contains('active')) {
