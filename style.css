@@ -678,7 +678,7 @@ header {
     text-align: left;
     flex: 1;
     min-width: 250px;
-    max-width: 350px;
+    max-width: 280px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -688,9 +688,10 @@ header {
 .review-card:hover {
     background: rgba(255, 255, 255, 0.06);
     transform: translateY(-5px);
+
 }
 
-.review-date {
+.review-model {
     font-size: 0.75rem;
     color: var(--text-gray);
     margin-bottom: 5px;
