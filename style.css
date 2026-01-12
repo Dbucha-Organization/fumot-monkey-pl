@@ -39,13 +39,13 @@ img {
     max-width: 100%;
     display: block;
 }
-element.style {
-}
+
 @media (max-width: 768px) and (min-width: 320px) {
     .warn {
         font-size: 10px !important;
     }
 }
+
 .warn {
     font-size: 16px;
     background-color: #000;
@@ -55,18 +55,23 @@ element.style {
     padding: 10px 0;
     font-weight: bold;
 }
-h1, h2, h3, h4 {
+
+h1,
+h2,
+h3,
+h4 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 10px;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-user agent stylesheet
-h1 {
+
+user agent stylesheet h1 {
     display: block;
     font-size: 2em;
     margin-block-start: 0.67em;
@@ -76,6 +81,7 @@ h1 {
     font-weight: bold;
     unicode-bidi: isolate;
 }
+
 body {
     font-family: var(--font-main);
     background-color: var(--bg-color);
@@ -83,6 +89,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+
 :root {
     --bg-color: #1f0738;
     --card-bg: #270e43;
@@ -96,6 +103,7 @@ body {
     --border-radius: 16px;
     --transition: all 0.3s ease;
 }
+
 /* Header */
 header {
     display: flex;
@@ -462,8 +470,10 @@ header {
     aspect-ratio: 1/1;
     box-shadow: 0 10px 25px rgba(116, 37, 201, 0.15);
     /* Little violet shadow */
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease;
+    transition: box-shadow 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
     overflow: hidden;
+    border: 1px solid transparent;
+    /* Prevent layout shift on hover */
 }
 
 .small-card-img-box img {
@@ -471,6 +481,8 @@ header {
     height: 100%;
     object-fit: cover;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    transition: transform 0.4s ease;
+    /* Transition on base class for smooth hover out */
 }
 
 /* Typography overridden below */
@@ -496,6 +508,30 @@ header {
     font-size: 12px;
     color: #cbd5f5;
     opacity: 0.85;
+    margin-bottom: 12px;
+}
+
+.btn-card-buy {
+    background: linear-gradient(90deg, #9b72ee, #cf9af8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(155, 114, 238, 0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.product-card-small:hover .btn-card-buy {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(155, 114, 238, 0.5);
+    background: linear-gradient(90deg, #cf9af8, #9b72ee);
 }
 
 
@@ -738,7 +774,8 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: transform 0.3s ease; background: 0.3s ease;
+    transition: transform 0.3s ease;
+    background: 0.3s ease;
 }
 
 .review-card:hover {
@@ -808,12 +845,35 @@ footer {
     gap: 20px;
 }
 
-.shipping-badge {
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icon {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #fff;
-    font-weight: 600;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: var(--gradient-main);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(155, 114, 238, 0.4);
+    border-color: transparent;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* Responsive adjustments */
@@ -1100,12 +1160,10 @@ footer {
 .product-card-small:hover .small-card-img-box {
     box-shadow: 0 15px 30px rgba(116, 37, 201, 0.2);
     border: 1px solid rgba(213, 59, 246, 0.3);
-    transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
 /* Ensure the image inside also transitions nicely (existing rule modified/checked) */
 .product-card-small:hover img {
     transform: scale(1.1) rotate(-5deg);
     /* Added rotation for dynamic feel */
-    transition: transform 0.4s ease;
 }
