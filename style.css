@@ -512,26 +512,30 @@ header {
 }
 
 .btn-card-buy {
-    background: linear-gradient(90deg, #9b72ee, #cf9af8);
+
+    background: linear-gradient(90deg, #8f0e9d, #b45cbe);
     color: #fff;
-    padding: 8px 16px;
+    padding: 12px 0;
+    width: 100%;
     border-radius: 20px;
     font-weight: 700;
     font-size: 0.75rem;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    width: fit-content;
     box-shadow: 0 4px 15px rgba(155, 114, 238, 0.3);
     transition: all 0.3s ease;
     text-transform: uppercase;
+    border: none;
+    cursor: pointer;
 }
+
 
 .product-card-small:hover .btn-card-buy {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(155, 114, 238, 0.5);
-    background: linear-gradient(90deg, #cf9af8, #9b72ee);
+    background: linear-gradient(90deg, #b45cbe, #8f0e9d);
 }
 
 
@@ -575,7 +579,7 @@ header {
 }
 
 .btn-buy-now {
-    background: linear-gradient(90deg, #9b72ee, #cf9af8);
+    background: linear-gradient(90deg, #8f0e9d, #bc18ce);
     border: none;
     color: #fff;
     padding: 10px 30px;
